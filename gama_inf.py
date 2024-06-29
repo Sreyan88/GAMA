@@ -274,7 +274,6 @@ def main(
         # print(output)
         tmp['audio_id'] = audio_path
         tmp['instruction'] = instruction
-        tmp['scene_caption'] = i['caption']
         tmp['prediction'] = output
         tmp['timestamp_events'] = i['timestamp_events']
         tmp['ref'] = j["output"]
