@@ -1,4 +1,4 @@
-# [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](https://arxiv.org/abs/2406.11768)
+# GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities  
 <p align="center"><img src="https://github.com/Sreyan88/GAMA/blob/main/assets/GAMA.png?raw=true" alt="GAMA Logo." width="300"/></p>
 
 This is the official implementation of our paper [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](https://arxiv.org/abs/2406.11768).
@@ -61,7 +61,7 @@ python gama_inf.py
 To evaluate GAMA we use the evaluation scheme employed by [LTU](https://github.com/YuanGongND/ltu/tree/main), the evaluation scripts can be found [here](https://github.com/YuanGongND/ltu/tree/main/src/ltu/eval).
 
 ----
-**Note:** The current code of GAMA does not include the implementation of `soft-prompt`. The code for `soft-prompt` will be released after the paper is accepted.
+**Note:** The current code of GAMA does not include the implementation of `soft-prompt`. The code for `soft-prompt` (and its related checkpoints) will be released after the paper is accepted. However, the stage 5 checkpoint released currently performs almost as well as with `soft-prompt`.
 
 ----
 
