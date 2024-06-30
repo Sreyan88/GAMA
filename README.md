@@ -55,7 +55,8 @@ To infer GAMA/GAMA-IT on [CompA-R benchmark](https://drive.google.com/drive/u/0/
 ```shell
 python gama_inf.py
 ```
-
+- CompA-R audios can be downloaded from [here](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM).
+  
 ### Evaluation
 To evaluate GAMA we use the evaluation scheme employed by [LTU](https://github.com/YuanGongND/ltu/tree/main), the evaluation scripts can be found [here](https://github.com/YuanGongND/ltu/tree/main/src/ltu/eval).
 
