@@ -32,7 +32,7 @@ The format of the dataset is a JSON file of a list of dicts, in the following fo
   ...
 ]
 ```
-Download the LLaMa-2-chat checkpoint from Huggingface and Audio-Qformer safetensor config and index jsons from [here](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM). Move the downloaded safetensors and jsons to downloaded LLaMa's folder.
+Download the LLaMa-2-chat checkpoint from Huggingface and Audio-Qformer safetensor, config and index jsons from [here](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM). Move the downloaded safetensors and jsons to downloaded LLaMa's folder.
 
 Use the following commands to train the model:
 ```shell
