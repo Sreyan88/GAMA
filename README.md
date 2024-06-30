@@ -61,6 +61,9 @@ python gama_inf.py
 To evaluate GAMA we use the evaluation scheme employed by [LTU](https://github.com/YuanGongND/ltu/tree/main), the evaluation scripts can be found [here](https://github.com/YuanGongND/ltu/tree/main/src/ltu/eval).
 
 ----
+**Note:** The current code of GAMA does not include the implementation of `soft-prompt`. The code for `soft-prompt` will be released after the paper is accepted.
+
+----
 
 ### Acknowledgement 🌻
 We would like to thank the authors of [LTU](https://github.com/YuanGongND/ltu/tree/main) for open-sourcing their code, which inspired our work.
