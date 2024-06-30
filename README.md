@@ -32,14 +32,15 @@ The format of the dataset is a JSON file of a list of dicts, in the following fo
   ...
 ]
 ```
-Download the LLaMa-2-chat checkpoint from Huggingface and Audio-Qformer safetensor, config and index jsons from [here](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM). Move the downloaded safetensors and jsons to downloaded LLaMa's folder.
+- Download the Llama-2-7b-chat-hf-qformer from [here](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM).
+- Update the path of the dowloaded Llama-2-7b-chat-hf-qformer in [finetune.py](./finetune.py) on line 93 and 98.
 
 Use the following commands to train the model:
 ```shell
 conda activate gama
 cd train_script
 # run finetuning on the data to train GAMA
-./stage1.sh
+./stage1.sh # need to specify the path of Llama-2-7b-chat-hf-qformer in for the `--base_model` arg.
 ./stage2.sh # need to specify the checkpoint in stage 1 training
 ./stage3.sh # need to specify the checkpoint in stage 2 training
 ./stage4.sh # need to specify the checkpoint in stage 3 training
