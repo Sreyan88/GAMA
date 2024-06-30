@@ -51,7 +51,7 @@ cd train_script
 
 ----
 ### Inference of GAMA 🔖
-To infer GAMA/GAMA-IT on [CompA-R benchmark](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM), chaneg the path to model in [gama_inf.py](/gama_inf.py) on line 215, and run:
+To infer GAMA/GAMA-IT on [CompA-R benchmark](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM), change the path to model in [gama_inf.py](/gama_inf.py) on line 215, and run:
 ```shell
 python gama_inf.py
 ```
