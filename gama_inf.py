@@ -183,7 +183,7 @@ def load_audio(filename):
 
 
 def main(
-    base_model: str = "/fs/nexus-projects/brain_project/acl_sk_24/GAMA//train_script/Llama-2-7b-chat-hf-qformer",
+    base_model: str = "/fs/nexus-projects/brain_project/Llama-2-7b-chat-hf-qformer",
     prompt_template: str = "alpaca_short",  # The prompt template to use, will default to alpaca.
 ):
     base_model = base_model or os.environ.get("BASE_MODEL", "")
@@ -210,9 +210,7 @@ def main(
     model = get_peft_model(model, config)
     temp, top_p, top_k = 0.1, 0.95, 500
     # change it to your model path
-    #/fs/nexus-projects/brain_project/acl_sk_24/GAMA//exp/stage4_all_mix/checkpoint-18000/
-    #/fs/nexus-projects/brain_project/acl_sk_24/GAMA//exp/stage5_all_mix/checkpoint-700/pytorch_model.bin
-    eval_mdl_path = '/fs/gamma-projects/audio/gama/new_data/stage5_all_mix_all/checkpoint-900'
+    eval_mdl_path = '/fs/gamma-projects/audio/gama/new_data/stage5/checkpoint-2500/pytorch_model.bin'
     state_dict = torch.load(eval_mdl_path, map_location='cpu')
     msg = model.load_state_dict(state_dict, strict=False)
 
@@ -229,55 +227,58 @@ def main(
     file = json.load(file)
     res = []
     for i in tqdm(file):
-        audio_path = i['audio_id']
-        instruction = j['instruction']
-        prompt = prompter.generate_prompt(instruction, None)
-        inputs = tokenizer(prompt, return_tensors="pt")
-        input_ids = inputs["input_ids"].to(device)
-        if audio_path != 'empty':
-            cur_audio_input = load_audio(audio_path).unsqueeze(0)
-            if torch.cuda.is_available() == False:
-                pass
+        tmp = {}
+        for j in i['instruction_output']:
+            audio_path = i['audio_id']
+            instruction = j['instruction']
+            prompt = prompter.generate_prompt(instruction, None)
+            inputs = tokenizer(prompt, return_tensors="pt")
+            input_ids = inputs["input_ids"].to(device)
+            if audio_path != 'empty':
+                cur_audio_input = load_audio(audio_path).unsqueeze(0)
+                if torch.cuda.is_available() == False:
+                    pass
+                else:
+                    cur_audio_input = cur_audio_input.to(device)
             else:
-                cur_audio_input = cur_audio_input.to(device)
-        else:
-            cur_audio_input = None
+                cur_audio_input = None
 
-        generation_config = GenerationConfig(
-            do_sample=True,
-            temperature=temp,
-            top_p=top_p,
-            top_k=top_k,
-            repetition_penalty=1.1,
-            max_new_tokens=400,
-            bos_token_id=model.config.bos_token_id,
-            eos_token_id=model.config.eos_token_id,
-            pad_token_id=model.config.pad_token_id,
-            num_return_sequences=1
-        )
-
-        # Without streaming
-
-        with torch.no_grad():
-            generation_output = model.generate(
-                input_ids=input_ids.to(device),
-                audio_input=cur_audio_input,
-                generation_config=generation_config,
-                return_dict_in_generate=True,
-                output_scores=True,
+            generation_config = GenerationConfig(
+                do_sample=True,
+                temperature=temp,
+                top_p=top_p,
+                top_k=top_k,
+                repetition_penalty=1.1,
                 max_new_tokens=400,
+                bos_token_id=model.config.bos_token_id,
+                eos_token_id=model.config.eos_token_id,
+                pad_token_id=model.config.pad_token_id,
+                num_return_sequences=1
             )
-        s = generation_output.sequences[0]
-        output = tokenizer.decode(s)[6:-4]
-        output = output[len(prompt):]
-        # print('----------------------')
-        # print(output)
-        tmp['audio_id'] = audio_path
-        tmp['instruction'] = instruction
-        tmp['prediction'] = output
-        tmp['timestamp_events'] = i['timestamp_events']
-        tmp['ref'] = j["output"]
-        res.append(tmp)
+
+            # Without streaming
+
+            with torch.no_grad():
+                generation_output = model.generate(
+                    input_ids=input_ids.to(device),
+                    audio_input=cur_audio_input,
+                    generation_config=generation_config,
+                    return_dict_in_generate=True,
+                    output_scores=True,
+                    max_new_tokens=400,
+                )
+            s = generation_output.sequences[0]
+            output = tokenizer.decode(s)[6:-4]
+            output = output[len(prompt):]
+            # print('----------------------')
+            # print(output)
+            tmp['audio_id'] = audio_path
+            tmp['instruction'] = instruction
+            tmp['scene_caption'] = i['caption']
+            tmp['prediction'] = output
+            tmp['timestamp_events'] = i['timestamp_events']
+            tmp['ref'] = j["output"]
+            res.append(tmp)
     with open("stage5_answers_qformer_all.json", "w") as res_file:
         json.dump(res, res_file, indent=4)
 
