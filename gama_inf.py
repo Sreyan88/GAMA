@@ -164,6 +164,9 @@ def get_audio_features(sample, audio_data, max_len, data_truncating, data_fillin
     
 def load_audio(filename):
     waveform, sr = torchaudio.load(filename)
+    if sr != 16000:
+        waveform = torchaudio.functional.resample(waveform, sr, 16000)
+        sr = 16000
     waveform = waveform - waveform.mean()
     fbank = torchaudio.compliance.kaldi.fbank(waveform, htk_compat=True, sample_frequency=sr,
                                               use_energy=False, window_type='hanning',
