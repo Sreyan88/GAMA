@@ -66,6 +66,9 @@ AUDIO_LEN = 1.0
 
 def load_audio(filename):
     waveform, sr = torchaudio.load(filename)
+    if sr != 16000:
+        waveform = torchaudio.functional.resample(waveform, sr, 16000)
+        sr = 16000
     audio_info = 'Original input audio length {:.2f} seconds, number of channels: {:d}, sampling rate: {:d}.'.format(waveform.shape[1]/sr, waveform.shape[0], sr)
     waveform = waveform - waveform.mean()
     fbank = torchaudio.compliance.kaldi.fbank(waveform, htk_compat=True, sample_frequency=sr,
