@@ -565,7 +565,7 @@ class DataCollatorForSeq2Seq:
 
             if sr != 16000:
                 waveform = torchaudio.functional.resample(waveform, sr, 16000)
-
+                sr = 16000
             # if waveform.shape[0] > 1:
             #     waveform = waveform[0]
             #     waveform = waveform.unsqueeze(0)
