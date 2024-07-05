@@ -3,7 +3,14 @@
 
 This is the official implementation of our paper [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](https://arxiv.org/abs/2406.11768).
 
+### Demo  
+We have hosted 2 HF spaces, generously supported by HuggingFace for GAMA and GAMA-IT. Feel free to play around with our models here:  
 
+[[`GAMA Demo`](https://huggingface.co/spaces/sonalkum/GAMA)] [[`GAMA-IT Demo`](https://huggingface.co/spaces/sonalkum/GAMA-IT)]  
+
+### Resources  
+
+All resources required for GAMA and GAMA-IT can be found in [this drive](https://drive.google.com/drive/u/0/folders/1W8ZtlhXNZ2IdVcKWsQpLD4jVw98brYDM). Information about the files is provided below in respective sections. We also share some additional CLAP Checkpoints (to be used with [this repository](https://github.com/LAION-AI/CLAP)) to promote research in this space. These CLAP checkpoints are trained on 2M+ audio-caption pairs with large batch sizes on H100s.  
 
 ### Setup 🏋️
 ```shell
