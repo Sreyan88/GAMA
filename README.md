@@ -8,7 +8,7 @@ We have hosted 2 HF spaces, generously supported by HuggingFace for GAMA and GAM
 
 <div align="center">
 
-[![GAMA](https://img.shields.io/badge/%F0%9F%A4%97%20GAMA-Online_Demo-orange)](https://huggingface.co/spaces/sonalkum/GAMA)&nbsp;
+[![GAMA](https://img.shields.io/badge/%F0%9F%A4%97%20GAMA-Online_Demo-orange)](https://huggingface.co/spaces/sonalkum/GAMA)&nbsp;&nbsp;&nbsp;&nbsp;
 [![GAMA](https://img.shields.io/badge/%F0%9F%A4%97%20GAMA%20IT-Online_Demo-black)](https://huggingface.co/spaces/sonalkum/GAMA-IT)&nbsp;
 
 </div>
