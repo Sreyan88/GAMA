@@ -6,7 +6,12 @@ This is the official implementation of our paper [GAMA: A Large Audio-Language M
 ### Demo  
 We have hosted 2 HF spaces, generously supported by HuggingFace for GAMA and GAMA-IT. Feel free to play around with our models here:  
 
-[[`GAMA Demo`](https://huggingface.co/spaces/sonalkum/GAMA)] [[`GAMA-IT Demo`](https://huggingface.co/spaces/sonalkum/GAMA-IT)]  
+<div align="center">
+
+[![GAMA](https://img.shields.io/badge/%F0%9F%A4%97%20GAMA-Online_Demo-orange)](https://huggingface.co/spaces/sonalkum/GAMA)&nbsp;
+[![GAMA](https://img.shields.io/badge/%F0%9F%A4%97%20GAMA%20IT-Online_Demo-black)](https://huggingface.co/spaces/sonalkum/GAMA-IT)&nbsp;
+
+</div>
 
 ### Resources  
 
