@@ -4,7 +4,7 @@
 This is the official implementation of our paper [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](https://arxiv.org/abs/2406.11768).
 
 ### Demo  
-We have hosted 2 HF spaces, generously supported by HuggingFace for GAMA and GAMA-IT. Feel free to play around with our models here:  
+We have hosted 2 HF spaces, generously supported by HuggingFace🤗 for GAMA and GAMA-IT. Feel free to play around with our models here:  
 
 <div align="center">
 
