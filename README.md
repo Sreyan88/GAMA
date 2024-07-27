@@ -3,6 +3,11 @@
 
 This is the official implementation of our paper [GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities](https://arxiv.org/abs/2406.11768).
 
+### Updates 🚨    
+
+- 🎉 GAMA achieves the highest F1 score amongst all LALMs on [Deductive Reasoning benchmark by Microsoft](https://arxiv.org/abs/2407.18062) (Table 4; ACE F1 and NACC)!    
+- 🎉 GAMA achieves the highest F1/Accuracy score amongst all LALMs on [Audio Hallucination benchmark by NTU](https://arxiv.org/abs/2406.08402)! A staggering 81.7% on POPE for Random and w/ Sampling. 
+
 ### Demo  
 We have hosted 2 HF spaces, generously supported by HuggingFace🤗 for GAMA and GAMA-IT. Feel free to play around with our models here:  
 
