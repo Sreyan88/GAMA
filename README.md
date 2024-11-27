@@ -87,13 +87,27 @@ We would like to thank the authors of [LTU](https://github.com/YuanGongND/ltu/tr
 
 ### Citation 🔏
 ```bib
-@misc{ghosh2024gamalargeaudiolanguagemodel,
-      title={GAMA: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities}, 
-      author={Sreyan Ghosh and Sonal Kumar and Ashish Seth and Chandra Kiran Reddy Evuru and Utkarsh Tyagi and S Sakshi and Oriol Nieto and Ramani Duraiswami and Dinesh Manocha},
-      year={2024},
-      eprint={2406.11768},
-      archivePrefix={arXiv},
-      primaryClass={cs.SD},
-      url={https://arxiv.org/abs/2406.11768}, 
+@inproceedings{ghosh-etal-2024-gama,
+    title = "{GAMA}: A Large Audio-Language Model with Advanced Audio Understanding and Complex Reasoning Abilities",
+    author = "Ghosh, Sreyan  and
+      Kumar, Sonal  and
+      Seth, Ashish  and
+      Evuru, Chandra Kiran Reddy  and
+      Tyagi, Utkarsh  and
+      Sakshi, S  and
+      Nieto, Oriol  and
+      Duraiswami, Ramani  and
+      Manocha, Dinesh",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.361",
+    pages = "6288--6313",
+    abstract = "Perceiving and understanding non-speech sounds and non-verbal speech is essential to making decisions that help us interact with our surroundings. In this paper, we propose GAMA, a novel General-purpose Large Audio-Language Model (LALM) with Advanced Audio Understanding and Complex Reasoning Abilities. We build GAMA by integrating an LLM with multiple types of audio representations, including features from a custom Audio Q-Former, a multi-layer aggregator that aggregates features from multiple layers of an audio encoder. We fine-tune GAMA on a large-scale audio-language dataset, which augments it with audio understanding capabilities. Next, we propose CompA-R (Instruction-Tuning for Complex Audio Reasoning), a synthetically generated instruction-tuning (IT) dataset with instructions that require the model to perform complex reasoning on the input audio. We instruction-tune GAMA with CompA-R to endow it with complex reasoning abilities, where we further add a soft prompt as input with high-level semantic evidence by leveraging event tags of the input audio. Finally, we also propose CompA-R-test, a human-labeled evaluation dataset for evaluating the capabilities of LALMs on open-ended audio question-answering that requires complex reasoning. Through automated and expert human evaluations, we show that GAMA outperforms all other LALMs in literature on diverse audio understanding tasks by margins of 1{\%}-84{\%} and demonstrates state-of-the-art performance on deductive reasoning and hallucination evaluation benchmarks. Further, GAMA IT-ed on CompA-R proves to be superior in its complex reasoning capabilities.",
 }
 ```
