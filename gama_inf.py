@@ -230,8 +230,8 @@ def main(
     file = json.load(file)
     res = []
     for i in tqdm(file):
-        tmp = {}
         for j in i['instruction_output']:
+            tmp = {}
             audio_path = i['audio_id']
             instruction = j['instruction']
             prompt = prompter.generate_prompt(instruction, None)
